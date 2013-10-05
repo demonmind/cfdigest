@@ -11,13 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131005201855) do
+ActiveRecord::Schema.define(:version => 20131005205215) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "items", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "rating"
+    t.integer  "category_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "items_posts", :id => false, :force => true do |t|
+    t.integer "item_id"
+    t.integer "post_id"
   end
 
   create_table "posts", :force => true do |t|
@@ -29,13 +43,9 @@ ActiveRecord::Schema.define(:version => 20131005201855) do
     t.string   "username"
   end
 
-  create_table "products", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "rating"
-    t.integer  "category_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+  create_table "posts_tags", :id => false, :force => true do |t|
+    t.integer "post_id"
+    t.integer "tag_id"
   end
 
   create_table "tags", :force => true do |t|

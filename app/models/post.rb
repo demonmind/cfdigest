@@ -1,6 +1,9 @@
-class Posts < ActiveRecord::Base
+class Post < ActiveRecord::Base
   include Tire::Model::Search
   include Tire::Model::Callbacks
+  has_and_belongs_to_many :tags
+  has_and_belongs_to_many :items
+  
   
   attr_accessible :posted_at, :text, :thread_id
   

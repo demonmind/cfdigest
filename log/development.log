@@ -1983,3 +1983,64 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Mysql2::Error: Unknown column 'items.category_id' in 'where clause': SELECT `items`.* FROM `items`  WHERE `items`.`category_id` = 1
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20131005182212)
+Migrating to CreatePosts (20131005190541)
+Migrating to AddUsernameToPost (20131005192454)
+Migrating to CreateCategories (20131005201606)
+Migrating to CreateProducts (20131005201714)
+Migrating to CreateTags (20131005201855)
+Migrating to JoinTableItemsAndPosts (20131005205202)
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20131005205202')
+Migrating to JoinTablePostsAndTags (20131005205215)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20131005205215')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (1.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20131005182212)
+Migrating to CreatePosts (20131005190541)
+Migrating to AddUsernameToPost (20131005192454)
+Migrating to CreateCategories (20131005201606)
+Migrating to CreateProducts (20131005201714)
+Migrating to CreateTags (20131005201855)
+Migrating to JoinTableItemsAndPosts (20131005205202)
+Migrating to JoinTablePostsAndTags (20131005205215)
+  [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20131005182212)
+Migrating to CreatePosts (20131005190541)
+Migrating to AddUsernameToPost (20131005192454)
+Migrating to CreateCategories (20131005201606)
+Migrating to CreateProducts (20131005201714)
+Migrating to CreateTags (20131005201855)
+Migrating to JoinTableItemsAndPosts (20131005205202)
+  [1m[35m (27.5ms)[0m  CREATE TABLE `items_posts` (`item_id` int(11), `post_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20131005205202')[0m
+Migrating to JoinTablePostsAndTags (20131005205215)
+  [1m[35m (10.2ms)[0m  CREATE TABLE `posts_tags` (`post_id` int(11), `tag_id` int(11)) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20131005205215')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to DeviseCreateUsers (20131005182212)
+Migrating to CreatePosts (20131005190541)
+Migrating to AddUsernameToPost (20131005192454)
+Migrating to CreateCategories (20131005201606)
+Migrating to CreateProducts (20131005201714)
+Migrating to CreateTags (20131005201855)
+Migrating to JoinTableItemsAndPosts (20131005205202)
+Migrating to JoinTablePostsAndTags (20131005205215)
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Mysql2::Error: Unknown column 'posts_tags.posts_id' in 'where clause': SELECT `tags`.* FROM `tags` INNER JOIN `posts_tags` ON `tags`.`id` = `posts_tags`.`tag_id` WHERE `posts_tags`.`posts_id` = 1
+Mysql2::Error: Unknown column 'posts_id' in 'field list': INSERT INTO `posts_tags` (`posts_id`, `tag_id`) VALUES (1, 1)
+Connecting to database specified by database.yml
+Mysql2::Error: Unknown column 'posts.tags' in 'where clause': SELECT `posts`.* FROM `posts`  WHERE `posts`.`tags` = 'hello'
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Mysql2::Error: Unknown column 'posts_tags.post_id' in 'where clause': SELECT `tags`.* FROM `tags` INNER JOIN `posts_tags` ON `tags`.`id` = `posts_tags`.`tag_id` WHERE `posts_tags`.`post_id` = 1

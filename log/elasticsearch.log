@@ -146,3 +146,29 @@ curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size
 #
 # {"took":2,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":4.746387,"hits":[{"_index":"cfdigest_development_posts","_type":"posts","_id":"1","_score":4.746387,"_source":{"id":1,"posted_at":null,"text":"Your donation will go towards the purchase of some new nebulisers to provide to Cystic Fibrosis families in need. All children and adults living with Cystic ...","thread_id":12}}]}}
 
+# 2013-10-05 16:58:23:180 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 16:58:23:180 [200]
+
+# 2013-10-05 16:58:23:191 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"Your"}},"size":10}'
+
+# 2013-10-05 16:58:23:191 [200] (1 msec)
+#
+# {"took":1,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":4.746387,"hits":[{"_index":"cfdigest_development_posts","_type":"posts","_id":"1","_score":4.746387,"_source":{"id":1,"posted_at":null,"text":"Your donation will go towards the purchase of some new nebulisers to provide to Cystic Fibrosis families in need. All children and adults living with Cystic ...","thread_id":12}}]}}
+
+# 2013-10-05 17:05:35:582 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 17:05:35:582 [200]
+
+# 2013-10-05 17:14:41:283 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 17:14:41:283 [200]
+
