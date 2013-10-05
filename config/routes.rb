@@ -2,7 +2,7 @@ Cfdigest::Application.routes.draw do
   resources :tags
 
 
-  resources :products
+  resources :items
 
 
   resources :categories
