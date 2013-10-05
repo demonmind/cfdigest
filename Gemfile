@@ -10,7 +10,8 @@ gem 'devise'
 gem 'cancan'
 gem "therubyracer"
 gem "twitter-bootstrap-rails"
-
+gem 'tire'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,4 +1,8 @@
 Cfdigest::Application.routes.draw do
+  get "post/index"
+
+  get "post/search"
+
   get "home/index"
 
   get "home/about"
