@@ -1,7 +1,16 @@
 Cfdigest::Application.routes.draw do
-  get "post/index"
+  resources :tags
 
-  get "post/search"
+
+  resources :products
+
+
+  resources :categories
+
+
+  get "posts/index"
+
+  get "posts/search"
 
   get "home/index"
 

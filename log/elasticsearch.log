@@ -1,0 +1,148 @@
+# 2013-10-05 15:27:07:379 [_search] (["posts"])
+#
+curl -X GET 'http://localhost:9200/posts/_search?pretty' -d '{"query":{"query_string":{"query":"publi"}}}'
+
+# 2013-10-05 15:27:07:379 [404] (N/A msec)
+#
+# {"error":"IndexMissingException[[posts] missing]","status":404}
+
+# 2013-10-05 15:37:40:233 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:37:40:233 [404]
+
+# 2013-10-05 15:37:40:443 [CREATE] ("cfdigest_development_posts")
+#
+curl -X POST http://localhost:9200/cfdigest_development_posts -d '{"mappings":{"posts":{"properties":{"id":{"type":"integer"},"text":{"analyzer":"snowball","boost":100,"type":"string"},"thread_id":{"type":"integer"},"posted_at":{"type":"date"}}}},"settings":{}}'
+
+# 2013-10-05 15:37:40:443 [200]
+#
+# {"ok":true,"acknowledged":true}
+
+# 2013-10-05 15:38:21:073 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:38:21:073 [200]
+
+# 2013-10-05 15:39:33:251 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:39:33:251 [200]
+
+# 2013-10-05 15:42:27:087 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:42:27:087 [200]
+
+# 2013-10-05 15:42:27:193 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"publi"}},"size":10}'
+
+# 2013-10-05 15:42:27:193 [200] (89 msec)
+#
+# {"took":89,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+
+# 2013-10-05 15:43:30:506 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:43:30:506 [200]
+
+# 2013-10-05 15:43:30:521 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"publi"}},"size":10}'
+
+# 2013-10-05 15:43:30:521 [200] (4 msec)
+#
+# {"took":4,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+
+# 2013-10-05 15:43:46:935 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:43:46:935 [200]
+
+# 2013-10-05 15:43:46:949 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"publi"}},"size":10}'
+
+# 2013-10-05 15:43:46:950 [200] (5 msec)
+#
+# {"took":5,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+
+# 2013-10-05 15:45:07:273 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:45:07:273 [200]
+
+# 2013-10-05 15:45:07:287 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"publi"}},"size":10}'
+
+# 2013-10-05 15:45:07:287 [200] (5 msec)
+#
+# {"took":5,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+
+# 2013-10-05 15:46:23:228 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:46:23:228 [200]
+
+# 2013-10-05 15:46:23:243 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"publi"}},"size":10}'
+
+# 2013-10-05 15:46:23:243 [200] (7 msec)
+#
+# {"took":7,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+
+# 2013-10-05 15:47:20:136 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:47:20:136 [200]
+
+# 2013-10-05 15:47:20:140 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"publi"}},"size":10}'
+
+# 2013-10-05 15:47:20:140 [200] (0 msec)
+#
+# {"took":0,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+
+# 2013-10-05 15:57:38:598 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-05 15:57:38:598 [200]
+
+# 2013-10-05 15:57:38:672 [posts/1] ("cfdigest_development_posts")
+#
+curl -X POST "http://localhost:9200/cfdigest_development_posts/posts/1" -d '{"id":1,"posted_at":null,"text":"Your donation will go towards the purchase of some new nebulisers to provide to Cystic Fibrosis families in need. All children and adults living with Cystic ...","thread_id":12}'
+
+# 2013-10-05 15:57:38:672 [201]
+#
+# {"ok":true,"_index":"cfdigest_development_posts","_type":"posts","_id":"1","_version":1}
+
+# 2013-10-05 15:58:49:857 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"publi"}},"size":10}'
+
+# 2013-10-05 15:58:49:857 [200] (0 msec)
+#
+# {"took":0,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":0,"max_score":null,"hits":[]}}
+
+# 2013-10-05 15:58:53:735 [_search] (["cfdigest_development_posts"])
+#
+curl -X GET 'http://localhost:9200/cfdigest_development_posts/posts/_search?size=10&pretty' -d '{"query":{"query_string":{"query":"Your"}},"size":10}'
+
+# 2013-10-05 15:58:53:736 [200] (2 msec)
+#
+# {"took":2,"timed_out":false,"_shards":{"total":5,"successful":5,"failed":0},"hits":{"total":1,"max_score":4.746387,"hits":[{"_index":"cfdigest_development_posts","_type":"posts","_id":"1","_score":4.746387,"_source":{"id":1,"posted_at":null,"text":"Your donation will go towards the purchase of some new nebulisers to provide to Cystic Fibrosis families in need. All children and adults living with Cystic ...","thread_id":12}}]}}
+
