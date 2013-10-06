@@ -8014,3 +8014,45 @@ curl -I "http://localhost:9200/cfdigest_development_posts"
 
 # 2013-10-05 23:55:20:118 [200]
 
+# 2013-10-06 02:39:53:689 [HEAD] ("cfdigest_development_items")
+#
+curl -I "http://localhost:9200/cfdigest_development_items"
+
+# 2013-10-06 02:39:53:689 [200]
+
+# 2013-10-06 02:39:53:725 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-06 02:39:53:725 [200]
+
+# 2013-10-06 02:42:14:094 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-06 02:42:14:094 [200]
+
+# 2013-10-06 02:44:29:815 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-06 02:44:29:816 [200]
+
+# 2013-10-06 02:44:29:861 [HEAD] ("cfdigest_development_items")
+#
+curl -I "http://localhost:9200/cfdigest_development_items"
+
+# 2013-10-06 02:44:29:861 [200]
+
+# 2013-10-06 02:45:14:468 [HEAD] ("cfdigest_development_posts")
+#
+curl -I "http://localhost:9200/cfdigest_development_posts"
+
+# 2013-10-06 02:45:14:468 [200]
+
+# 2013-10-06 02:45:14:511 [HEAD] ("cfdigest_development_items")
+#
+curl -I "http://localhost:9200/cfdigest_development_items"
+
+# 2013-10-06 02:45:14:511 [200]
+

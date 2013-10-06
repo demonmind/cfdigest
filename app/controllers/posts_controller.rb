@@ -7,12 +7,14 @@ class PostsController < ApplicationController
 
   def search
     sterm = params[:item]
-    tags = params[:tags]
-    if sterm != nil
-      @res = Item.find_by_name(sterm).posts rescue nil
-      @res.each do |article|
-        Rails.logger.debug article.text.inspect
-        Rails.logger.debug article.thread_id.inspect
+    if params[:type]
+      if params[:type] == "tag"
+        tags = params[:item]
+        @res = Tag.find_by_name(tags).posts rescue nil
+      end
+    else
+      if sterm != nil
+        @res = Item.find_by_name(sterm).posts rescue nil
       end
     end
     render layout: false

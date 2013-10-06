@@ -1,32 +1,32 @@
-<div class="main-wrapper">
+<div class="main-wrapper" style="padding-left: 11px;">
 	<% if @categories %>
 		<% @categories.each do |category| %>
-			<div class="cat-name"><%= link_to category.name, "#", :class => "catlink" %></div>
+			<div class="cat-name" id="<%= category.name.gsub("/","-") %>"><%= link_to category.name, "#", :class => "catlink" %></div>
 		<% end %>
 	<% end %>
-	<div class="subcats"></div>
-	<div class="items"></div>
-	<div class="content">
+	<div class="content" style="width: 80%;float: right;display: block;top: 70px;position: absolute;left: 246px;">
 		<div class="searchbox"></div>
 		<div class=postcontainer></div>
 	</div>
 </div>
 <script type="text/javascript">
-$(".catlink").on("click", function(){
+$("a.catlink").on("click", function(){
+	var elem = $(this);
 	$.getJSON("<%= home_getsubcats_path %>.json?cat="+this.text, function(response){
 		var items = [];
 		console.log(response);
 		  $.each(response, function( key, val ) {
 		    items.push( "<li id='" + key + "'><a href='#' class='subcatlink'>" + val.name + "</a></li>" );
 		  });
-		  console.log(items);
-	 	 $(".subcats").html("<ul>"+items.join("")+"</ul>");
+		  $(".subcats").remove();
+		  elem.parent().after('<div class="subcats"><ul style="margin-bottom: 0;">'+items.join("")+'</ul></div>');
 		  $(".items").html("");
 	  }
 	);
 });
 
 $(".subcatlink").live("click", function(){
+	var elem = $(this);
 	$.getJSON("<%= home_getitems_path %>.json?subcat="+this.text, function(response){
 		var itemsing = [];
 		console.log(response);
@@ -34,14 +34,14 @@ $(".subcatlink").live("click", function(){
 		    itemsing.push( "<li id='" + key + "'><a href='#' class='itemlink'>" + val.name + "</a></li>" );
 		  });
 		  console.log(itemsing);
-	 	 $(".items").html("<ul>"+itemsing.join("")+"</ul>");
+		  $(".items").remove();
+	 	  elem.parent().after('<div class="items"><ul style="margin-bottom: 0;">'+itemsing.join("")+'</ul></div>');
 	  }
 	);
 	
 });
 
 $(".itemlink").live("click", function(){
-	console.log("hello");
 	$.ajax({
 		url: "<%= posts_search_path %>?item="+this.text, 
 		success: function(response){
@@ -51,4 +51,15 @@ $(".itemlink").live("click", function(){
 	  });
 });
 
+
+$(".tag").live("click", function(){
+	$.ajax({
+		url: "<%= posts_search_path %>?type=tag&item="+this.text, 
+		success: function(response){
+			console.log(response);
+	 		$(".postcontainer").html(response);
+		}
+	  });
+	
+});
 </script>
