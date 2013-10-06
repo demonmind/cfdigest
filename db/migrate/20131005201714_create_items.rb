@@ -4,7 +4,6 @@ class CreateItems < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :rating
-      t.integer :category_id
 
       t.timestamps
     end

@@ -1,2 +1,21 @@
-<h1>Post#search</h1>
-<p>Find me in app/views/post/search.html.erb</p>
+<div class="postswrapper">
+	<% if @res %>
+		<% @res.each do |r| %>
+		<div id="post">	
+			<div id="header"><%= r.username %>, Posted at: <%= r.posted_at %><span style="float:right;">Source: <%= r.thread_id %></span></div>
+			<div id="body"><%= r.text %></div>
+			<div id="footer" style="height:15px; width:100%;">Post Footer</div>
+		</div>
+		<% end %>
+	<% end %>
+</div>
+
+<style>
+#post{
+	background: rgb(233, 226, 226);
+	padding: 6px;
+	margin: 10px;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+</style

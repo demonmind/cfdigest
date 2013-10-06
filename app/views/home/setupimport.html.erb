@@ -1,0 +1,9 @@
+<%= form_tag(home_import_path, :multipart => true) do %>
+<div class="field">
+  <%= label_tag :file %>
+  <%= file_field_tag :file %>
+</div>
+<div class="actions">
+  <%= submit_tag 'Submit' %>
+</div>
+<% end %>

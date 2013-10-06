@@ -1,2 +1,54 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="main-wrapper">
+	<% if @categories %>
+		<% @categories.each do |category| %>
+			<div class="cat-name"><%= link_to category.name, "#", :class => "catlink" %></div>
+		<% end %>
+	<% end %>
+	<div class="subcats"></div>
+	<div class="items"></div>
+	<div class="content">
+		<div class="searchbox"></div>
+		<div class=postcontainer></div>
+	</div>
+</div>
+<script type="text/javascript">
+$(".catlink").on("click", function(){
+	$.getJSON("<%= home_getsubcats_path %>.json?cat="+this.text, function(response){
+		var items = [];
+		console.log(response);
+		  $.each(response, function( key, val ) {
+		    items.push( "<li id='" + key + "'><a href='#' class='subcatlink'>" + val.name + "</a></li>" );
+		  });
+		  console.log(items);
+	 	 $(".subcats").html("<ul>"+items.join("")+"</ul>");
+		  $(".items").html("");
+	  }
+	);
+});
+
+$(".subcatlink").live("click", function(){
+	$.getJSON("<%= home_getitems_path %>.json?subcat="+this.text, function(response){
+		var itemsing = [];
+		console.log(response);
+		  $.each(response, function( key, val ) {
+		    itemsing.push( "<li id='" + key + "'><a href='#' class='itemlink'>" + val.name + "</a></li>" );
+		  });
+		  console.log(itemsing);
+	 	 $(".items").html("<ul>"+itemsing.join("")+"</ul>");
+	  }
+	);
+	
+});
+
+$(".itemlink").live("click", function(){
+	console.log("hello");
+	$.ajax({
+		url: "<%= posts_search_path %>?item="+this.text, 
+		success: function(response){
+			console.log(response);
+	 		$(".postcontainer").html(response);
+		}
+	  });
+});
+
+</script>

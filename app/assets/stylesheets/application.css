@@ -11,3 +11,33 @@
  *= require_self
  *= require_tree .
  */
+
+body { 
+  background: url(/assets/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+div#header-fixed {position:fixed; top:0px; margin:auto; z-index:100000; width:100%;} 
+div#my-menus {background:#000; height:75px; opacity:0.8}
+
+.navbar{
+	opacity: 0.6;
+}
+
+a.brand{
+	font-weight: 700 !important;
+	color: red !important;
+}
+
+.navbar-inner{
+	height: 60px !important;
+}
+
+.itemlink{
+	cursor: pointer;
+	color: blue;
+}

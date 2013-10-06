@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   has_and_belongs_to_many :items
   
   
-  attr_accessible :posted_at, :text, :thread_id
+  attr_accessible :posted_at, :text, :thread_id, :username
   
   tire.mapping do
     indexes :id, type: 'integer'
@@ -13,6 +13,7 @@ class Post < ActiveRecord::Base
     indexes :thread_id, type: 'integer'
     indexes :posted_at, type: 'date'
   end
+  
   
 #   def self.search(params)
 #     tire.search(load: true) do

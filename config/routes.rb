@@ -1,4 +1,7 @@
 Cfdigest::Application.routes.draw do
+  resources :subcategories
+
+
   resources :tags
 
 
@@ -6,7 +9,11 @@ Cfdigest::Application.routes.draw do
 
 
   resources :categories
-
+  get "home/setupimport"
+  
+  get "home/getsubcats"
+  
+  post "home/import"
 
   get "posts/index"
 
@@ -17,6 +24,8 @@ Cfdigest::Application.routes.draw do
   get "home/about"
 
   get "home/contact"
+  
+  get "home/getitems"
 
   devise_for :users
 

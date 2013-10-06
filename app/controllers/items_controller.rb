@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(params[:product])
+    @item = Item.new(params[:item])
 
     respond_to do |format|
       if @item.save
@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
 
     respond_to do |format|
-      if @item.update_attributes(params[:product])
+      if @item.update_attributes(params[:item])
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
         format.json { head :no_content }
       else
